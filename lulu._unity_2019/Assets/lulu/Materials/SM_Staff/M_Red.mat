@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Red
-  m_Shader: {fileID: 4800000, guid: 3fa9951d4f663e90389e58a63284f70c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7d2fe867c7fd42f46a3f2f57fa57be08, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -67,6 +67,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Ambient: 0
     - _BumpScale: 1
@@ -76,6 +80,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _Glow: 0
     - _LightIntensity: 1
     - _Metallic: 0
     - _Mode: 0

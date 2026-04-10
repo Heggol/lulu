@@ -38,13 +38,7 @@ async function doMap(file: rm.DIFFICULTY_NAME) {
         beat: 0,
         position: [-80, 50, 50]
     })
-
-    prefabs.sm_staff.instantiate(map, {
-        track: 'staff',
-        beat: 0,
-        position: [0, 0, 0]
-    })
-    
+    const sc1 = prefabs.scene1.instantiate(map, 0)
 }
 
 await Promise.all([
