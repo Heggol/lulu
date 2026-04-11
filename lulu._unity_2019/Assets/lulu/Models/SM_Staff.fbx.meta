@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Cloth
+    second: {fileID: 2100000, guid: 2054442350911690f9441fc59713adc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Gold
     second: {fileID: 2100000, guid: e03ab977c69b2f7e6bdc09acec8dc9ee, type: 2}
   - first:
