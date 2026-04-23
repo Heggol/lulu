@@ -13,14 +13,12 @@ async function doMap(file: rm.DIFFICULTY_NAME) {
     const map = await rm.readDifficultyV3(pipeline, file)
     map.difficultyInfo.requirements = [
         'Chroma',
-        'Noodle Extensions',
         'Vivify',
+        'Noodle Extensions'
     ]
     rm.environmentRemoval(map, ['Environment', 'GameCore'])
     map.difficultyInfo.settingsSetter = {
-        graphics: {
-            screenDisplacementEffectsEnabled: true,
-        },
+        graphics: {},
         chroma: {
             disableEnvironmentEnhancements: false,
         },
@@ -32,13 +30,34 @@ async function doMap(file: rm.DIFFICULTY_NAME) {
         modifiers: {}
     }
     //rm.setRenderingSettings(map, {})
-    prefabs.flowerpedals.instantiate(map, {
-        scale: [5, 5, 5],
-        track: 'flowerpedals',
-        beat: 0,
-        position: [-80, 50, 50]
-    })
     prefabs.scene1.instantiate(map, 0)
+    prefabs.plane.instantiate(map, {
+        beat: 0,
+        track: 'petalTrack'
+    })    
+    new rm.AssignTrackParent(map, {
+        beat: 0,
+        parentTrack: 'playerTrack',
+        childrenTracks: ['petalTrack'],
+    })
+    rm.animateTrack(map, {
+        beat: 0,
+        duration: 100,
+        track: 'playerTrack',
+        animation: {
+            localPosition: ["baseHeadPosition"],
+            localRotation: ["baseHeadRotation"]
+        }
+    })
+    rm.animateTrack(map, {
+        beat: 5,
+        duration: 100,
+        track: 'petalTrack',
+        animation: {
+            localRotation: [90, 0,0],
+            localPosition: [0, 0, 0]
+        }
+    })
 }
 
 await Promise.all([
